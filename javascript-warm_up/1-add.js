@@ -1,2 +1,7 @@
-let sumofintegers = add(99,108);
-console.log(sumofintegers)
+function add(c, d) {
+    return c + d;
+}
+
+let sum = add(4, 1);
+console.log(sum)
+
