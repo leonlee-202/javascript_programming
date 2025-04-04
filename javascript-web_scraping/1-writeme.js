@@ -1,5 +1,9 @@
 const fs = require("node:fs");
 
+//refactor the code to add filePath and content to argv
+
+
+
 fs.writeFile("./js.txt", "Hello World!", (err) =>{
     if (err) {
         console.log(err);

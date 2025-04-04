@@ -1,5 +1,13 @@
 const request = require('request');
 
+
+const movieId = process.argv[2];
+
+if (!movieId) {
+    console.log('3');
+    process.exit(1);
+}
+
 const url = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
 request(url, (error, response, body) => {

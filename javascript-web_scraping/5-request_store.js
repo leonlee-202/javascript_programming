@@ -1,6 +1,5 @@
 const request = require('request')
 const fs = require('fs');
-const fetch = require('fetch');
 request('https://www.lipsum.com/', function(url, filePath) {
          fetch(url);
         console.log (response.text());
