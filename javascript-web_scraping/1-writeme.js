@@ -1,21 +1,16 @@
-const fs = require("node:fs");
+const fs = require('fs');
 
-//refactor the code to add filePath and content to argv
+const filePath = process.argv[2];
+const content = process.argv[3];
 
+if (process.argv.length <3){
+    console.error('Provide filepath');
+    process.exit(1);
+ }
+ 
 
-
-fs.writeFile("./js.txt", "Hello World!", (err) =>{
+fs.writeFile(filePath, content, 'utf8', (err) => {
     if (err) {
-        console.log(err);
-    } else{
-        console.log("File written");
-    }
-});
-
-fs.readFile("./js.txt", "utf-8", (error, data) =>{
-    if (error) {
-        console.log(error);
-    } else{
-        console.log(data);
+        console.error(err);
     }
 });

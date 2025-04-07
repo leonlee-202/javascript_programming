@@ -1,8 +1,16 @@
 const request = require('request')
+const url = 'https://www.lipsum.com/'
 const fs = require('fs');
-request('https://www.lipsum.com/', function(url, filePath) {
-         fetch(url);
-        console.log (response.text());
+
+function getfile(url){
+    request.get(url, (error, response) => {
+      if (error){
+         console.error(error);
+         return;
+      } 
+      console.log(response.body);
+    });
+
 
         fs.writeFile("./lipsum.txt", filePath, body, (err) => {
             if (err) {
@@ -18,5 +26,11 @@ request('https://www.lipsum.com/', function(url, filePath) {
             console.log(data);
         }
       });
+};
+ if (process.argv.length<3){
+    console.error("Provide url");
+    process.exit(1);
+ };
 
-});
+
+getfile(url)

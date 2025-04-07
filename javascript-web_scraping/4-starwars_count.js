@@ -18,4 +18,5 @@ request(apiUrl, (error, response, body) => {
     });
 
     console.log('Number of movies with Wedge Antilles:', count);
+    console.log(response.movie);
 });
